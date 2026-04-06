@@ -7,7 +7,7 @@
     "dev": "cross-env NODE_ENV=development tsx watch server/_core/index.ts",
     "build": "cd client && npm install && npm run build && cd .. && esbuild server/_core/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
     "start": "NODE_ENV=production node dist/index.js",
-    "postinstall": "npx drizzle-kit push || true",
+    "db:push": "drizzle-kit push",
     "check": "tsc --noEmit",
     "format": "prettier --write .",
     "test": "vitest run"
