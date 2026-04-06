@@ -5,9 +5,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "cross-env NODE_ENV=development tsx watch server/_core/index.ts",
-    "build": "cd client && npm install && npm run build && cd .. && esbuild server/_core/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
+    "build": "cd client && npm install && npm run build && cd .. && esbuild server/_core/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist && npx drizzle-kit push || true",
     "start": "NODE_ENV=production node dist/index.js",
-    "postinstall": "npx drizzle-kit push || true",
+    "postinstall": "",
     "check": "tsc --noEmit",
     "format": "prettier --write .",
     "test": "vitest run"
@@ -91,7 +91,7 @@
     "add": "^2.0.6",
     "autoprefixer": "^10.4.20",
     "cross-env": "^10.1.0",
-    "drizzle-kit": "^0.31.4",
+    "drizzle-kit": "^0.31.10",
     "esbuild": "^0.25.0",
     "pnpm": "^10.15.1",
     "postcss": "^8.4.47",
